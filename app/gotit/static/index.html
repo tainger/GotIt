@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GotIt · 把喜欢的片刻留下</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="/">GotIt<span>↙</span></a><span class="local"><i></i> 仅在这台电脑运行</span></header>
+  <main>
+    <section class="intro"><div class="eyebrow">YOUR LOCAL VIDEO SHELF</div><h1>把喜欢的片刻，<br><span>留在这里。</span></h1><p>粘贴抖音分享链接，将视频保存到自己的电脑。</p></section>
+    <section class="workspace">
+      <div class="editor">
+        <div class="section-label"><span>01 / 添加视频</span><span class="tag">抖音 · 免费本地解析</span></div>
+        <form id="resolve-form"><label for="link">分享链接或完整分享文案</label><textarea id="link" maxlength="5000" required placeholder="粘贴 https://v.douyin.com/…&#10;带有链接的整段分享文案也可以。"></textarea><div class="form-bottom"><span>无需登录 · 无需充值</span><button id="resolve" type="submit">解析视频 <span>↗</span></button></div></form>
+        <p class="note">已验证真实视频下载。解析可能需要约一分钟；部分链接仍可能受平台限制。</p>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <div id="result" hidden><div class="result-label">链接已解析</div><h2 id="video-title"></h2><p id="video-author"></p><p class="note">使用来源播放文件，不保证消除画面内嵌水印。</p><button id="download" type="button">下载到电脑 ↓</button></div>
+      </div>
+      <aside><span class="aside-number">↙</span><h2>简单一点，<br>只为自己留存。</h2><ol><li>复制抖音视频的分享链接</li><li>粘贴链接并解析</li><li>下载后，在下方预览或另存</li></ol><div class="aside-foot">单个文件最多 200MB<br>支持公开单条视频，暂不支持图集</div></aside>
+    </section>
+    <section class="history"><div class="history-heading"><div class="section-label">02 / 我的下载</div><span id="count">0 个视频</span></div><div id="jobs"><div class="empty"><span>↓</span><h3>第一段收藏，从一个链接开始</h3><p>下载完成的视频会出现在这里。</p></div></div><p class="save-location">保存位置：<span id="directory">正在读取…</span></p></section>
+    <footer><span>GotIt / 私人视频工具箱</span><span>请仅保存你拥有或获准使用的内容。</span></footer>
+  </main>
+  <dialog id="preview"><button id="close-preview" class="secondary" type="button">关闭 ×</button><video controls playsinline></video></dialog>
+</body></html>
